@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>my test page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script1.js"></script>
 </head>
+
+<!--example of internal style sheet -->
+<style>
+        p {
+        color: red;
+        text-align: center;
+        }
+
+        div {
+            color: green;
+            text-align: right;
+            margin-right: 30px;
+        }
+</style>
+<!--"--------------------------------------------------- -->
 <body bgcolor="#00f0ff" background="img/img1.png">
     <!--    <script src="1.js"></script> -->
     <h1> Welcome! </h1>
     <h2> here </h2>
     <h3> In <sub>this</sub> <sup>strange</sup> page </h3>
-    <h4>
-        I need to learn sthg new
+    <!-- inline css -->
+    <h4 style="color: red; text-align: center;">
+        H4 I need to learn sthg new
     </h4>
     <p>
     here some info I am<br> trying to remind myself what HTML is about <br>
@@ -19,7 +37,7 @@
     </em> <mark>but some other just mark</mark>    </p>
 
     <div>
-        Try some <a href="http://google.com">google</a> if you do not afraid
+        Try some <a href="http://google.com" target="_blank">google</a> if you do not afraid
     </div>
     <div contenteditable="true">
         let's create a box that can be written text into
@@ -75,8 +93,8 @@
 
     <form> Different input form to website
         <div>
-            Do you like it ? <br> <input type="radio" name="verification1" value="yes"> YES
-            <input type="radio" name="verification1" value="no"> NO
+            Do you like it ? <br> <input type="radio" name="verification1" value="yes" onchange="title_func(value)"> YES
+            <input type="radio" name="verification1" value="no" onchange="title_func(value)"> NO
 
         </div>
 
@@ -103,6 +121,28 @@
 </div>
 
 
+ <div id="myid">
+    example of id css style
+</div>
 
+ <div class="mynote">
+    example of class css style
+</div>
+
+<script>
+    function title_func(value) {
+            console.log("YES ",value);
+            let text = document.title;
+
+            console.log(`${text}`);
+
+            document.title = text + " " + value
+
+
+            
+        }
+
+
+</script>
 </body>
 </html>
